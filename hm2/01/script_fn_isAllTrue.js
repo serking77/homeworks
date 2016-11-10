@@ -11,13 +11,14 @@ function isAllTrue (source, filterFn) {
 
 for (var i = 0; i <source.length; i++) {
    if (!filterFn(source[i])) {
-       result = false;    
-    }
+       result = false;
+       break;    
+   }
        else {
-	   result =  true;
+     result =  true;
     }
-return result;
   }
+return result;  
 }
 
 function isNumber(val) {
@@ -26,8 +27,8 @@ function isNumber(val) {
 
 }
 
-var allNumbers = [1, 2, 4, 5, 6, 7, 8],
-    someNumbers = ["1", 2, 'привет', 4, 5, 'loftschool', 6, 7, 8],
+var allNumbers = [1, 2, 4, 5, 6, 7, 8],i
+    someNumbers = ["1", 2, 'привет', 4, 5, 'loftschool', 6, 7, 8];
     noNumbers = ['это', 'массив', 'без', 'чисел'],
     arrnull = [];
 
