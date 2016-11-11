@@ -36,3 +36,5 @@ console.log(isAllTrue(allNumbers, isNumber)); //вернет true
 console.log(isAllTrue(someNumbers, isNumber)); //вернет false
 console.log(isAllTrue(noNumbers, isNumber)); //вернет false
 console.log(isAllTrue (arrnull, isNumber)); //выбросит ошибку
+
+module.exports = {isAllTrue};
