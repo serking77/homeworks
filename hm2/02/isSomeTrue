@@ -38,3 +38,5 @@ console.log(isSomeTrue(allNumbers, isNumber)); //вернет true
 console.log(isSomeTrue(someNumbers, isNumber)); //вернет true
 
 console.log(isSomeTrue(noNumbers, isNumber)); //вернет false
+
+module.exports = {isSomeTrue};
