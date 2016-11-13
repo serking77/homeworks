@@ -40,3 +40,7 @@ function map (array, func) {
 
 let sqare = map(array, item => item*item);
 console.log(sqare);
+
+module.exports = {forEach};
+module.exports = {filter};
+module.exports = {map};
