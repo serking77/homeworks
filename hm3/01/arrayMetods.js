@@ -18,10 +18,10 @@ function filter (array, func) {
       let result = [];
     for (var i=0; i<array.length; i++) {
     	if (func(array[i])) {
-    	   result += array[i] + "\n";	
+    	   result[result.length] =  array[i];	
     	}
     }      
-      return result;
+      return result
 }
 
 let greaterThan4 = filter(array, item => item > 4);
@@ -32,7 +32,7 @@ console.log("----Функция map-----");
 function map (array, func) {
       let result = [];
     for (var i=0; i<array.length; i++) {
-    	result += func(array[i]) + "\n";	
+    	result[result.length] = func(array[i]);	
     	}
       return result;
 
@@ -41,6 +41,4 @@ function map (array, func) {
 let sqare = map(array, item => item*item);
 console.log(sqare);
 
-module.exports = {forEach};
-module.exports = {filter};
-module.exports = {map};
+module.exports = {forEach , filter, map};
