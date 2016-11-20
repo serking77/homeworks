@@ -1,30 +1,94 @@
-<!DOCTYPE html>
 <html>
 
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>Мой аккордион</title>
     <link rel="stylesheet" href="main.css">
-    <title>JS Bin</title>
+    <link href='https://fonts.googleapis.com/css?family=Fira+Sans:500&subset=latin,cyrillic' rel='stylesheet' type='text/css'>
 </head>
 
 <body>
-    <button class="btn">Click</button>
-    <hr />
-    <div class="info">
-        <div class="info__heading">
-            <h1>Hello</h1>
-        </div>
-        <div class="info__text">
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eum at necessitatibus voluptates facilis nostrum dicta minima quidem reprehenderit, voluptatibus, error nihil ullam nisi quod animi dolor enim doloribus quasi quae.</p>
+    <div id="container">
+        <div id="logo"></div>
+        <div id="accordion">
+            <div class="item odd_item">
+                <div id="caption1" class="caption">
+                    <a id="str1" class="strdown" href="#"></a>
+                    <p>Основы языка и как на нём говорить правильно</p>
+                </div>
+                <div id="content1" class="content">
+                    <p>Лексическая структура
+                        <br />Типы данных, значения и переменные
+                        <br />Выражения и операторы инструкции</p>
+                </div>
+            </div>
+            <div class="item">
+                <div id="caption2" class="caption">
+                    <a id="str2" class="strdown" href="#"></a>
+                    <p id="qwerty">Функции</p>
+                </div>
+                <div id="content2" class="content">
+                    <p>Объявление
+                        <br />Локальные переменные
+                        <br />Внешние переменные</p>
+                </div>
+            </div>
+            <div class="item odd_item">
+                <div id="caption3" class="caption">
+                    <a id="str3" class="strdown" href="#"></a>
+                    <p>Обработка ошибок и отладка</p>
+                </div>
+                <div id="content3" class="content">
+                    <p>Исключения: throw/catch/finally
+                        <br />Встроенный класс Error
+                        <br />Ловля конкретного исключения</p>
+                </div>
+            </div>
+            <div class="item">
+                <div id="caption4" class="caption">
+                    <a id="str4" class="strdown" href="#"></a>
+                    <p>Объекты и массивы</p>
+                </div>
+                <div id="content4" class="content">
+                    <p>Объекты как ассоциативные массивы
+                        <br />Объекты: перебор свойств
+                        <br />Объекты: передача по ссылке
+                        <br />Массивы с числовыми индексами
+                        <br />Массивы: методы</p>
+                </div>
+            </div>
+            <div class="item odd_item">
+                <div id="caption5" class="caption">
+                    <a id="str5" class="strdown" href="#"></a>
+                    <p>События</p>
+                </div>
+                <div id="content5" class="content">
+                    <p>Порядок обработки событий
+                        <br />Объект события
+                        <br />Делегирование событий</p>
+                </div>
+            </div>
         </div>
     </div>
-    <div class="info">
-        <div class="info__heading">
-            <h1>Hello</h1>
-        </div>
-    </div>
-    <script src="main.js"></script>
+    <script>
+   var current;
+    accordion.addEventListener('click', function(e) {
+        if (!e.target.classList.contains('strdown')) {
+            return;
+        }
+
+        if (e.target.parentNode.parentNode.classList.contains('open')) {
+            current = null;
+            e.target.parentNode.parentNode.classList.toggle('open');
+        } else {
+            if (current) {
+                current.parentNode.parentNode.classList.toggle('open');
+            }
+            current = e.target;
+            current.parentNode.parentNode.classList.toggle('open');
+        }
+    })
+    </script>
 </body>
 
 </html>
