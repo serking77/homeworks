@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="cont">
+       <li></li>
+       <li></li>
+       <li></li>
+    </div>
+    <script>
+    function prepend(container, newElement) {
+        if (container.children.length === 0) {
+            container.appendChild(newElement);
+        }
+
+        container.insertBefore(newElement, container.children[0]);
+    }
+
+    var div = document.createElement('div');
+    prepend(cont, div)
+    </script>
+</body>
+
+</html>
