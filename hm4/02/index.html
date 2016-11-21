@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="cont">
+        <li></li>
+        <li></li>
+        <li></li>
+    </div>
+    <script>
+    function deleteTextNodes(Element) {
+        for (var i = 0; i < Element.childNodes.length; i++) {
+            if (Element.childNodes[i].nodeType === 3) {
+                Element.removeChild(Element.childNodes[i]);
+            i--;
+            }
+        }
+    }
+
+   deleteTextNodes(cont);
+   console.dir(cont.childNodes);
+    </script>
+</body>
+
+</html>
