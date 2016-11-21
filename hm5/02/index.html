@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <link rel="stylesheet" href="main.css">
+    <title>JS Bin</title>
+</head>
+
+<body>
+    <button>Создай Div'ы!!!</button>
+    <div id="div1"></div>
+    <script>
+    /* Функция возращаем случайный размер Div'a*/
+    function getRandomDivDimensions(min, max) {
+        return Math.floor(Math.random() * (max - min + 1)) + min;
+    }
+
+    /* Функция возращаем случайный цвет Div'a*/
+    function getRandomDivColor() {
+        var colors = ['aqua', 'black', 'blue', 'fuchsia', 'gray', 'green', 'lime', 'maroon', 'navy', 'olive', 'purple', 'red', 'silver', 'teal', 'white', 'yellow'];
+
+        return colors[Math.floor(Math.random() * 16)];
+    }
+
+    /* Функция возращаем случайный отступ*/
+    function getRandomDivIndent(min, max) {
+        return Math.floor(Math.random() * (max - min + 1)) + min;
+    }
+
+    var body = document.querySelector('body');
+    var button = document.querySelector('button');
+
+    var handler = function() {
+        var div2 = document.createElement('div');
+        div2.style.height = getRandomDivDimensions(20, 150) + 'px';
+        div2.style.width = getRandomDivDimensions(20, 150) + 'px';
+        div2.style.backgroundColor = getRandomDivColor();
+        div2.style.left = getRandomDivIndent(0, body.clientWidth) + 'px';
+        div2.style.top = getRandomDivIndent(0, body.clientHeight) + 'px';
+        div2.className = 'mobile_div';
+        document.body.appendChild(div2);
+        
+        var handlerMouseDown = function(event) {
+        	    div2.style.left = event.pageX - div2.offsetWidth / 2 + 'px';
+        	    div2.style.top = event.pageY - div2.offsetHeight / 2 + 'px';
+                
+                var handlerMouseMove = function(event) {
+                div2.style.left = event.pageX - div2.offsetWidth / 2 + 'px';
+        	    div2.style.top = event.pageY - div2.offsetHeight / 2 + 'px';
+        	    };
+                document.addEventListener('mousemove', handlerMouseMove);
+
+                var handlerMouseUp = function() {
+                document.removeEventListener('mousemove', handlerMouseMove);
+                div2.removeEventListener('mouseup', handlerMouseUp);
+                };
+                div2.addEventListener('mouseup', handlerMouseUp);
+        }
+        div2.addEventListener('mousedown', handlerMouseDown);    
+    }
+    button.addEventListener('click', handler);
+    </script>
+</body>
+
+</html>
