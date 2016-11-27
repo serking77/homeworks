@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+    body {
+        margin: 0 auto;
+        width: 600px;
+    }
+    
+    table {
+        border: 4px double black;
+        border-collapse: collapse;
+    }
+    
+    th {
+        text-align: left;
+        /* Выравнивание по левому краю */
+        background: #ccc;
+        /* Цвет фона ячеек */
+        padding: 5px;
+        /* Поля вокруг содержимого ячеек */
+        border: 1px solid black;
+        /* Граница вокруг ячеек */
+    }
+    
+    td {
+        padding: 5px;
+        /* Поля вокруг содержимого ячеек */
+        border: 1px solid black;
+        /* Граница вокруг ячеек */
+    }
+    </style>
+</head>
+
+<body>
+    <p>На этой странице присутствуют следующие cookie. Вы можете их удалить</p>
+    <script>
+    //устанавливаем куки
+    var objCookie = {
+        1: {
+            name: "_ga",
+            value: "GA.1.2.156.55666.55555788"
+        },
+        2: {
+            name: "_gat",
+            value: "1"
+        },
+        3: {
+            name: "_gat_UA-56335599-5",
+            value: "2"
+        },
+        4: {
+            name: "_ym_isad",
+            value: "2"
+        },
+    }
+
+    for (key in objCookie) {
+        document.cookie = objCookie[key].name + '=' + objCookie[key].value;
+    }
+    </script>
+    <script src="main.js"></script>
+
+</html>
