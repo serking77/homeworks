@@ -60,11 +60,11 @@ container.addEventListener('click', function(e) {
 //Реализуем функциональность формы
 var button = document.getElementById('button');
 var form = document.forms.myForm;
-console.dir(form.name);
+
 
 //получаем значения инпутов
 
-console.dir(document.forms);
+
 button.addEventListener('click', function(e) {
     //функция работающая с приращением времени
     function getexpires(str) {
@@ -87,7 +87,6 @@ button.addEventListener('click', function(e) {
     //Формируем строку куки
     var str = form.name.value + '=' + form.value.value + '; ' + 'expires=' + getexpires(form.expires.value);
     document.cookie = str;
-    console.log(str);
 
     //удаляем таблицу
     container.removeChild(document.querySelector('table'));
