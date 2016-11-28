@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+    body {
+        margin: 0 auto;
+        width: 600px;
+    }
+    
+    table {
+        border: 4px double black;
+        border-collapse: collapse;
+    }
+    
+    th {
+        text-align: left;
+        /* Выравнивание по левому краю */
+        background: #ccc;
+        /* Цвет фона ячеек */
+        padding: 5px;
+        /* Поля вокруг содержимого ячеек */
+        border: 1px solid black;
+        /* Граница вокруг ячеек */
+    }
+    
+    td {
+        padding: 5px;
+        /* Поля вокруг содержимого ячеек */
+        border: 1px solid black;
+        /* Граница вокруг ячеек */
+    }
+    </style>
+</head>
+
+<body>
+    <p>здесь можно добавить новую куку</p>
+    <form name="myForm" style="width: 300px;">
+        <p>имя :
+            <input type="text" size="40" name="name" >
+        </p>
+        <p>значение :
+            <input type="text" size="40" name="value" >
+        </p>
+        <p>срок годности (количество дней) :
+            <input type="text" size="40" name="expires" >
+        </p>
+        <button id="button">Добавить</button>
+    </form>
+    <div id="container">
+        <p id="rr">На этой странице присутствуют следующие cookie. Вы можете их удалить</p>
+    </div>
+    <script src="main.js"></script>
+
+</html>
