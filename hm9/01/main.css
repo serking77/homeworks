@@ -1,0 +1,102 @@
+html,
+body {
+    height: 100%;
+    width: 100%;
+}
+
+.contfrends {
+    height: 90%;
+    background-color: red;
+    width: 50%;
+    margin: 20px auto;
+}
+
+#header {
+    height: 10%;
+    background-color: blue;
+}
+
+#poisk {
+    height: 10%;
+    background-color: green;
+}
+
+#main {
+    height: 70%;
+    background-color: white;
+}
+
+#footer {
+    height: 10%;
+    background-color: yellow;
+}
+
+#titlefrends {
+    background-color: #FFDAB9;
+    float: left;
+    width: 50%;
+}
+
+#titlemyfrends {
+    background-color: #20B2AA;
+    float: right;
+    width: 50%;
+}
+
+#left {
+    width: 50%;
+    background-color: pink;
+    float: left;
+    height: 100%;
+    overflow: auto;
+}
+
+#right {
+    width: 50%;
+    background-color: #FF4500;
+    float: right;
+    height: 100%;
+    overflow: auto;
+}
+
+ul {
+    padding: 0 0;
+}
+
+li {
+    display: block;
+    height: 10%;
+}
+
+#iteminfo {
+    float: left;
+    background-color: #D2691E;
+    margin: 5px;
+    width: 96%;
+    height: 60px;
+}
+
+#itemadd {
+    float: right;
+    background-color: #808000;
+    margin: 5px;
+}
+
+.photo {
+    width: 50px;
+    height: 50px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    margin-left: 5px;
+}
+
+.add {
+    width: 30px;
+    height: 30px;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    margin-right: 10px;
+}
+.fio {
+	margin-left: 10px; 
+}
