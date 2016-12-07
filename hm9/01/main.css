@@ -2,35 +2,60 @@ html,
 body {
     height: 100%;
     width: 100%;
+    font-family: 'Fira Sans', sans-serif;
+    background-color: #999999;
+}
+
+::-webkit-scrollbar {
+    width: 8px;
+    /* 1 - вертикальный скроллбар */
+}
+
+::-webkit-scrollbar-track-piece {
+    background: #fff;
+    /* 4 – видимая часть трека */
+}
+
+::-webkit-scrollbar-thumb {
+    background: #F0F0F0;
+    border-radius: 2px;
+    height: 50px;
 }
 
 .contfrends {
     height: 90%;
-    background-color: red;
-    width: 643px;
+    width: 620px;
     margin: 20px auto;
+    border-radius: 8px 2;
 }
 
 #header {
-    height: 10%;
-    background-color: blue;
+    height: 45px;
+    background-color: #FF8663;
+    border-radius: 8px 8px 0 0;
+}
+
+h3 {
+    font-size: 16px;
+    font-weight: normal;
+    color: #fff;
+    margin: 0 0;
+    padding: 15px;
 }
 
 #poisk {
-    height: 10%;
-    background-color: green;
+    height: 45px;
+    background-color: #F0F0F0;
 }
 
 #poisk1 {
-float: left;
-    background-color: green;
+    float: left;
     width: 50%;
 }
 
 #poisk2 {
     float: right;
     width: 50%;
-    background-color: green;
 }
 
 #main {
@@ -39,33 +64,44 @@ float: left;
 }
 
 #footer {
-    height: 10%;
-    background-color: yellow;
+    height: 46px;
+    background-color: #F0F0F0;
+    border-radius: 0 0 8px 8px;
 }
 
 #titlefrends {
-    background-color: #FFDAB9;
     float: left;
-    width: 50%;
+    width: 310px;
+    border-right: 2px solid #F0F0F0;
+    background-color: #fff;
+    height: 32px;
 }
 
 #titlemyfrends {
-    background-color: #20B2AA;
     float: right;
-    width: 50%;
+    width: 310px;
+    background-color: #fff;
+    height: 32px;
+}
+
+#titlefrends p,
+#titlemyfrends p {
+    border-bottom: 1px solid #F0F0F0;
+    color: #4F4F4F;
+    font-weight: normal;
+    padding-left: 10px;
+    padding-top: 7px;
 }
 
 #left {
-    width: 50%;
-    background-color: pink;
+    width: 310px;
     float: left;
     height: 100%;
     overflow: auto;
 }
 
 #right {
-    width: 50%;
-    background-color: #FF4500;
+    width: 310px;
     float: right;
     height: 100%;
     overflow: auto;
@@ -82,9 +118,8 @@ li {
 
 .iteminfo {
     float: left;
-    background-color: #D2691E;
     margin: 5px;
-    width: 300px;
+    width: 290px;
     height: 60px;
     cursor: pointer;
 }
@@ -92,7 +127,6 @@ li {
 .hidden {
     display: none;
 }
-
 
 .photo {
     width: 50px;
@@ -103,11 +137,8 @@ li {
 }
 
 .add {
-    width: 30px;
-    height: 30px;
-    margin-top: 15px;
-    margin-bottom: 15px;
-    margin-right: 10px;
+    margin-top: 20px;
+    margin-right: 20px;
 }
 
 .fio {
@@ -117,4 +148,27 @@ li {
 .mobile_div {
     position: absolute;
     cursor: move;
+    border-right: 1px solid #F0F0F0;
+    background-color: #F0F0F0; 
+}
+
+#button {
+    color: #fff;
+    background-color: #FF8663;
+    border-radius: 8px;
+    border: 0px ;
+    font-size: 14px;
+    width: 88px;
+    height: 30px;
+    float:right;
+    margin-right: 10px;
+    margin-top: 8px;
+}
+
+#input1, #input2 {
+    border-radius: 8px;
+    border: 0px ;
+    margin-top: 10px;
+    margin-left: 10px;
+
 }
