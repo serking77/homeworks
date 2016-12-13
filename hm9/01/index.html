@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" href="main.css">
+    <link href='https://fonts.googleapis.com/css?family=Fira+Sans:500&subset=latin,cyrillic' rel='stylesheet' type='text/css'>
+    <script src="http://vk.com/js/api/openapi.js" type="text/javascript"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.5/handlebars.min.js"></script>
+</head>
+
+<body>
+    <div class="contfrends">
+        <div id="header"><h3>Выберите друзей</h3></div>
+        <div id="poisk">
+            <div id="poisk1"><input id="input1" type="text" size="30" placeholder="  Начните вводить имя друга"></div>
+            <div id="poisk2"><input id="input2" type="text" size="30" placeholder="  Название"></div>
+        </div>
+        <div id="titlefrends">
+            <p>Ваши друзья</p>
+        </div>
+        <div id="titlemyfrends">
+            <p>Друзья в списке</p>
+        </div>
+        <div style="clear: both;"></div>
+        <div id="main">
+            <div id="left"></div>
+            <div id="right"></div>
+        </div>
+        <div id="footer"><button id="button">Сохранить</button></div>
+    </div>
+
+<script type="text/x-handlebars-template" id="friendsItemTemplate">
+    <ul>
+        {{#each list}}
+        <li>
+            <div class="iteminfo" data-fullname = "{{first_name}} {{last_name}}">
+                <img src="{{photo_50}}" class="photo"><span class="fio">{{first_name}} {{last_name}}</span><img class="add" src="img/add.png" align="right">
+            </div>
+        </li>
+        {{/each}}
+    </ul>
+</script>
+<script src="main.js"></script>
+</body>
+
+</html>
