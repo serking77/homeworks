@@ -1,3 +1,4 @@
+
 var calculator = function(firstNumber) {
     this.firstNumber = firstNumber;
 }
@@ -36,7 +37,7 @@ calculator.prototype.div = function() {
                     }
 
                 }
-                return result;
+                return result;s
             } catch (err) {
                 return err.message;
             }
@@ -51,14 +52,40 @@ calculator.prototype.mul = function() {
             return result;
         };
 
+
+var mySqlCalc = function(firstNumber) {
+    this.firstNumber = firstNumber;
+}
+
+function inherit(child, parent) {
+ child.prototype = Object.create(parent.prototype);
+ child.prototype.constructor = child;
+ child.prototype.parent = parent;
+}
+
+inherit(mySqlCalc, calculator);
+
+
+mySqlCalc.prototype.sum = function() {
+    var calc2 = this.parent.prototype.sum.apply(this, arguments);
+        return calc2 * calc2;
+};
+mySqlCalc.prototype.dif = function() {
+    var calc2 = this.parent.prototype.dif.apply(this, arguments);
+        return calc2 * calc2;
+};
+mySqlCalc.prototype.div = function() {
+    var calc2 = this.parent.prototype.div.apply(this, arguments);
+        return calc2 * calc2;
+};
+mySqlCalc.prototype.mul = function() {
+    var calc2 = this.parent.prototype.mul.apply(this, arguments);
+        return calc2 * calc2;
+};
+
 var myCalculator = new calculator(100);
-
-console.log(myCalculator.sum(1, 2, 3)); //вернет 106
-
-console.log(myCalculator.dif(10, 20)); //вернет 70
-
-console.log(myCalculator.div(2, 2)); //вернет 25
-
-console.log(myCalculator.mul(2, 2)); //вернет 400*/
-
-
+var SqlCalc = new mySqlCalc(100);
+console.log(SqlCalc.sum(1, 2, 3)); //вернет 11 236 (100 + 1 + 2 + 3 = 106 * 106)
+console.log(SqlCalc.dif(10, 20)); //вернет 4 900
+console.log(SqlCalc.div(2, 2)); //вернет 625
+console.log(SqlCalc.mul(2, 2)); //вернет 160 000 
