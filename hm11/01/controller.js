@@ -20,14 +20,8 @@ var Controller = {
         });
     },
     photosRoute: function() {
-        Model.getPhotos().then(function(photos) {
-            console.dir(photos);
-            results.innerHTML = View.render('photos', { list: photos.items });
+       return Model.getPhotosAll().then(function(photos) {
+            results.innerHTML = View.render('photos', { list: photos });
         });
-        Model.getComments().then(function(photoscomments) {
-            console.dir(photoscomments);
-            results.innerHTML = View.render('photoscomments', { list: photoscomments.items });
-        });
-
     }
 };

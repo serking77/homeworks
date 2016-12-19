@@ -44,6 +44,23 @@ var Model = {
         return this.callApi('photos.getAll', { extended: 1, v: '5.60' });
     },
     getComments: function() {
-        return this.callApi('photos.getAllComments', { v: '5.60' });
-    }
+        return this.callApi('photos.getAllComments', { extended: 1, v: '5.60' });
+    },
+    getPhotosAll: function() {
+        var photosArray;
+        return Model.getPhotos()
+            .then(function(photos) {
+                photosArray = photos.items;
+                return Model.getComments();
+            })
+            .then(function(comments) {
+                photosArray.forEach(function(photo, i, arr) {
+                    var commentsArray = comments.items.filter(function(comment, i, arr) {
+                        return photo.id === comment.pid;
+                    });
+                    photo.commentsCount = commentsArray.length;
+                });
+                return photosArray;
+            });
+    },
 };

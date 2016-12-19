@@ -17,6 +17,10 @@
         float: left;
         margin: 15px;
     }
+    .photos {
+        float: left;
+        margin: 15px;
+    }
     </style>
 </head>
 
@@ -93,6 +97,7 @@
                 <img src="{{photo_130}}">
                 <div>Кол-во лайков - {{likes.count}}</div>
                 <div>Кол-во репостов - {{reposts.count}}</div>
+                <div>Кол-во комментариев - {{commentsCount}}</div>
             </div>
             {{/each}}
         </div>
